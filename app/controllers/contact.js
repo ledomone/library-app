@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
   actions: {
     sendMessage() {
       this.get('model').save().then((response) => {
-        alert(`email: ${this.get('emailAddress')} \nmessage: ${this.get('message')}`);
+        alert(`email: ${this.get('model.email')} \nmessage: ${this.get('model.message')}`);
         this.set('responseMessage', `We got your message (id: ${response.id})and get in touch soon.`);
         this.set('model', this.store.createRecord('contact'));
       });

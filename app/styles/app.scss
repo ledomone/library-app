@@ -12,7 +12,7 @@ table tr.with-counter {
     counter-increment: rowNumber;
 }
 
-table tr td:first-child::before {
+table tr.with-counter td:first-child::before {
     content: counter(rowNumber);
     min-width: 1em;
     margin-right: 0.5em;
