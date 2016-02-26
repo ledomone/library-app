@@ -12,6 +12,14 @@ export default Ember.Route.extend({
         this.controller.set('responseMessage', `Thank you! We've just saved your email address with the following id: ${response.get('id')}`);
         this.controller.set('model', this.store.createRecord('invitation'));
       });
+    },
+
+    willTransition() {
+      let model = this.controller.get('model');
+
+      if (model.get('isNew')) {
+        model.destroyRecord();
+      }
     }
   }
 
