@@ -81,7 +81,7 @@ export default Ember.Controller.extend({
     return randomLibrary;
   },
 
-  _desroyAll(records) {
+  _destroyAll(records) {
     records.forEach((item) => {
       item.destroyRecord();
     });
